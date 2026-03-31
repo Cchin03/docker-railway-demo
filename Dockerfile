@@ -1,5 +1,6 @@
 FROM node:20-alpine AS deps
 WORKDIR /app
+# Ensure the dependencies are cached separately from the application code
 COPY package*.json ./
 RUN npm ci --only=production
 
